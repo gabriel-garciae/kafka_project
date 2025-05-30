@@ -14,8 +14,7 @@ def delivery_report(err, msg):
     else:
         print(f"Message delivered to {msg.topic()} [{msg.partition()}]")
 
-
-# Producer configuration
+# Configuração do Producer
 producer_conf = {
     'bootstrap.servers': os.environ['BOOTSTRAP_SERVERS'],
     'security.protocol': 'SASL_SSL',
@@ -23,7 +22,6 @@ producer_conf = {
     'sasl.username': os.environ['SASL_USERNAME'],
     'sasl.password': os.environ['SASL_PASSWORD']
 }
-
 
 def generate_unique_id():
     return int(str(uuid.uuid4().int)[:8])
